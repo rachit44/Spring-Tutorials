@@ -1,0 +1,12 @@
+package com.project.Engine;
+
+public class Engine {
+	public String capacity = "default";
+
+	public String getCapacity() {
+		return capacity;
+	}
+
+	
+	
+}

@@ -1,0 +1,17 @@
+package com.project;
+import java.lang.System;
+
+import javax.naming.Context;
+import com.project.Vehicle;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class Main {
+	ApplicationContext app = new ClassPathXmlApplicationContext("BeanConfig.xml");
+	
+	Vehicle veh1 = (Vehicle) app.getBean("v1");
+	
+
+
+}

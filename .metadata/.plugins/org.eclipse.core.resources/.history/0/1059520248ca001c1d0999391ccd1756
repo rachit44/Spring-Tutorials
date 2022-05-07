@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+
+	<context:component-scan
+		base-package="com.project"></context:component-scan>
+
+	<bean id="v1" class="com.project.Engine.Vehicle" autowire="constructor">
+	<constructor-arg index="0" value="Blue"></constructor-arg>
+	<constructor-arg index="1" value="Pulsar" ></constructor-arg>
+	<property name="engine" ref="innBean"></property>
+</bean>
+
+	<bean id="v2" class="com.project.Engine.Vehicle">
+		<property name="colors">
+			<list>
+				<value type="String">"White"</value>
+				<value type="String">"Black"</value>
+				<value type="String">"Red"</value>
+			</list>
+		</property>
+		<property name="name" value="YAMAHA FZ5"></property>
+	</bean>
+
+	<bean id="engine" class="com.project.Engine.Engine">
+		<property name="capacity" value="120CC" />
+	</bean>
+
+
+	<bean id="elecengine" class="com.project.Engine.Engine">
+		<property name="capacity" value="180CC" />
+	</bean>
+
+	<bean id="elecengine2" class="com.project.Engine.Engine">
+		<property name="capacity" value="250CC" />
+	</bean>
+</beans>
